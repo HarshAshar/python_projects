@@ -1,0 +1,18 @@
+body {
+    margin: auto;
+    font-family: sans-serif;
+}
+
+body > .content {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 25%;
+    display: inline-table;
+}
+
+table, th, td {
+    border: solid 1px grey;
+}
