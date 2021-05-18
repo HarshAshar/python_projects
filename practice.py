@@ -1,6 +1,7 @@
 import array as arr
 from random import shuffle
 import random
+import functools
 
 my_array = arr.array('i', [1,2,3,4,5])
 
@@ -49,3 +50,64 @@ print(dict['Capital'])
 # find the length
 print(len(name))
 
+#Reduce
+
+print("Reduce : ")
+
+def add(x, y):
+    print(x, y)
+    return x+y
+
+print(functools.reduce(add, range(1, 5)))
+
+print("Reduce end.")
+
+def even(k):
+    for i in range(k):
+        if i % 2 != 0:
+            yield i
+
+print(even(20))
+
+# Given a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome.
+
+print("check for palindrome")
+
+def palindrome(s):
+    for i in range(len(s)):
+        t = s[:i] + s[i+1:]
+        print(s[:i], s[i+1:])
+        if t == t[::-1]: return True
+    return s == s[::-1]
+    
+palindrome("radkar")
+
+#Given an array nums, write a function to move all zeroes to the end of it while maintaining the relative order of the non-zero elements.
+
+print("moveZeroes")
+
+array1 = [0, 1, 0, 3, 12]
+
+def moveZeroes(nums):
+    for i in nums:
+        if 0 in nums:
+            nums.remove(0)
+            nums.append(0)
+    return nums
+
+print(moveZeroes(array1))
+
+#Given two sentences, return an array that has the words that appear in one sentence and not the other and an array with the words in common. 
+
+sentence1 = 'We are really pleased to meet you in our city'
+sentence2 = 'The city was hit by a really heavy storm'
+
+def solution(sentence1, sentence2):
+    set1 = set(sentence1.split())
+    set2 = set(sentence2.split())
+
+    return sorted(list(set1^set2)), sorted(list(set1&set2))
+
+print(solution(sentence1, sentence2))
+
+# 
