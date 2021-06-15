@@ -13,8 +13,6 @@ def gameOfLife(board):
 
             aliveNeighbours = calculateAliveNeighbours(i, j)
 
-            print(aliveNeighbours)
-
             if board[i][j] == 0 and aliveNeighbours == 3:
                 newBoard[i][j] = 1
             elif board[i][j] == 1 and (aliveNeighbours < 2 or aliveNeighbours > 3):
